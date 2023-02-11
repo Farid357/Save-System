@@ -1,7 +1,16 @@
 {
-  "name": "save-system",
+  "name": "com.unity.save-system",
   "version": "0.1.0",
-  "type": "library",
   "displayName": "Save System",
-  "unity": "2021.3.16"
+  "description": "Save System with different types of save storage",
+  "unity": "2021.3.16",
+  "unityRelease": "0b5",
+  "keywords": [
+    "SaveSystem",
+    "SaveStorage"
+  ],
+  "author": {
+    "name": "My Company",
+    "email": "Blackwazz7@gmail.com"
+  }
 }
