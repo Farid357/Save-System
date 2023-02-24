@@ -34,7 +34,6 @@ namespace SaveSystem
 
             var serializer = new XmlSerializer(typeof(TStoreValue));
             var fileText = File.ReadAllText(_pathName);
-            using var fileStream = new FileStream(_pathName, FileMode.Create);
             using var stringReader = new StringReader(fileText);
             return (TStoreValue)serializer.Deserialize(stringReader);
         }

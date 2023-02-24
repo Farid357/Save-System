@@ -39,7 +39,7 @@ namespace SaveSystem
 
         public void Save(TStoreValue value)
         {
-            using var file = File.Create(_pathName);
+            using FileStream file = File.Create(_pathName);
             _formatter.Serialize(file, value);
         }
     }

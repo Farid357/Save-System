@@ -7,7 +7,9 @@ namespace SaveSystem.Tests
     {
         public void SavesCorrectly(ISaveStorage<DummySaveData> storage, string name, int id)
         {
-            storage.DeleteSaveIfHas();
+            if (storage.HasSave())
+                storage.DeleteSave();
+            
             storage.Save(new DummySaveData(id, name));
             DummySaveData loadedData = storage.Load();
             Assert.That(loadedData.Id == id && loadedData.Name == name);
@@ -15,7 +17,9 @@ namespace SaveSystem.Tests
         
         public void ThrowsExceptions(ISaveStorage<DummySaveData> storage)
         {
-            storage.DeleteSaveIfHas();
+            if (storage.HasSave())
+                storage.DeleteSave();
+            
             Assert.Throws<CannotDeleteSaveException>(() => storage.DeleteSave());
             Assert.Throws<HasNotSaveException>(() => storage.Load());
         }

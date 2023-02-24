@@ -6,11 +6,11 @@ namespace SaveSystem
 {
     public sealed class SaveStorages : ISaveStorages
     {
-        private readonly List<ICanDeleteSaveStorage> _all = new();
+        private readonly List<ISaveStorage> _all = new();
 
         public bool HasSaves() => _all.Any(storage => storage.HasSave());
 
-        public void Add(ICanDeleteSaveStorage storage)
+        public void Add(ISaveStorage storage)
         {
             if (storage == null)
                 throw new ArgumentNullException(nameof(storage));
