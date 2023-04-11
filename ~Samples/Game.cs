@@ -13,8 +13,10 @@ namespace Samples
             
             //You can use class "SavesStorage" to delete all saves
             ISavesStorage savesStorage = new SavesStorage();
-            //Delete all saves
-            savesStorage.DeleteAllSaves();
+
+            //Delete all saves if they exist
+            if (savesStorage.HasSaves())
+                savesStorage.DeleteAllSaves();
         }
     }
 }
