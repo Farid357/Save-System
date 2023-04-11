@@ -12,8 +12,7 @@ namespace SaveSystem
         {
             if (HasSaves() == false)
                 throw new InvalidOperationException($"SaveStorages can't delete saves, because doesn't contain them!");
-
-
+            
             Directory.Delete(Path.SavesFolder, true);
         }
     }
