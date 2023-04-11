@@ -6,14 +6,25 @@ namespace SaveSystem
 {
     public sealed class SavesStorage : ISavesStorage
     {
-        public bool HasSaves() => Directory.Exists(Path.SavesFolder);
+        private readonly string _savesFolderPath;
+
+        public SavesStorage(string savesFolderPath)
+        {
+            _savesFolderPath = savesFolderPath ?? throw new ArgumentNullException(nameof(savesFolderPath));
+        }
+
+        public SavesStorage() : this(Path.SavesFolder)
+        {
+        }
+
+        public bool HasSaves() => Directory.Exists(_savesFolderPath);
 
         public void DeleteAllSaves()
         {
             if (HasSaves() == false)
                 throw new InvalidOperationException($"SaveStorages can't delete saves, because doesn't contain them!");
             
-            Directory.Delete(Path.SavesFolder, true);
+            Directory.Delete(_savesFolderPath, true);
         }
     }
 }
