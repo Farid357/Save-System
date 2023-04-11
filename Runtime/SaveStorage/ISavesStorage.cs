@@ -1,10 +1,8 @@
 ﻿namespace SaveSystem
 {
-    public interface ISaveStorages
+    public interface ISavesStorage
     {
         bool HasSaves();
-        
-        void Add(ISaveStorage storage);
         
         void DeleteAllSaves();
 

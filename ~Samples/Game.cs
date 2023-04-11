@@ -11,12 +11,10 @@ namespace Samples
             ISaveStorage<Money> storage = new BinaryStorage<Money>(new Path(nameof(IWallet)));
             IWallet wallet = new Wallet(storage);
             
-            //You can use class "SaveStorages" to delete all saves
-            ISaveStorages saveStorages = new SaveStorages();
-            saveStorages.Add(storage);
-            
+            //You can use class "SavesStorage" to delete all saves
+            ISavesStorage savesStorage = new SavesStorage();
             //Delete all saves
-            saveStorages.DeleteAllSaves();
+            savesStorage.DeleteAllSaves();
         }
     }
 }

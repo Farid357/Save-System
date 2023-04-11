@@ -1,15 +1,12 @@
 namespace SaveSystem
 {
-    public interface ISaveStorage<TStoreValue> : ISaveStorage
+    public interface ISaveStorage<TStoreValue>
     {
+        bool HasSave();
+
         TStoreValue Load();
 
         void Save(TStoreValue value);
-    }
-
-    public interface ISaveStorage
-    {
-        bool HasSave();
         
         void DeleteSave();
     }
