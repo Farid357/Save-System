@@ -1,10 +1,10 @@
 {
-    "name": "Tests",
+    "name": "SaveSystem.Tests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Runtime"
+        "SaveSystem.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
